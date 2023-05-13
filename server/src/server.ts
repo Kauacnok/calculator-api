@@ -1,8 +1,11 @@
 import Fastify from 'fastify'
+import { routes }  from './routes'
 
-const fastify = Fastify({
+export const fastify = Fastify({
 	logger: true
 })
+
+fastify.register(routes)
 
 async function listenServer() {
 	try {
