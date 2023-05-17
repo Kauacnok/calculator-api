@@ -11,7 +11,7 @@ const PORT = process.env.PORT! || 3000
 
 async function listenServer() {
 	try {
-		await fastify.listen({ port: Number(PORT) })
+		await fastify.listen({ port: Number(PORT), host: '0.0.0.0' })
 	} catch (err) {
 		fastify.log.error(err)
 		process.exit(1)
